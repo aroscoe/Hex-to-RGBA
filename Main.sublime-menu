@@ -1,0 +1,15 @@
+[
+    {
+        "id": "edit",
+        "children":
+        [
+            {
+                "id": "hextorgba"
+            },
+            {
+                "command": "hex_to_rgba", 
+                "caption": "Convert Hex to RGBA"
+            }
+        ]
+    }
+]

@@ -1,0 +1,3 @@
+[
+    { "keys": ["shift+ctrl+r"], "command": "hex_to_rgba" }
+]
