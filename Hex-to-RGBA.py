@@ -1,6 +1,6 @@
 import sublime, sublime_plugin, re, string
 
-class HexToRGBACommand(sublime_plugin.TextCommand):
+class HexToRgbaCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         for selection in self.view.sel():
             word_region = self.view.word(selection)
@@ -13,8 +13,6 @@ class HexToRGBACommand(sublime_plugin.TextCommand):
                     elif (self.view.substr(word_region.begin()) == "#"):
                         tmp_region = sublime.Region(word_region.begin(), word_region.end())
                         self.view.replace(edit, tmp_region, rgba_css)
-                else:
-                    print 'false'
 
     def hex_to_rgba(self, value):
         value = value.lstrip('#')
@@ -23,13 +21,9 @@ class HexToRGBACommand(sublime_plugin.TextCommand):
 
     def convert_to_rgba_css(self, word_region):
         word = self.view.substr(word_region)
-        
         re_hex_color = re.compile('#?([0-9a-fA-F]{3}([0-9a-fA-F]{3})?){1}$')
-        match = re_hex_color.match(word)
-
-        if match:
+        if re_hex_color.match(word):
             rgba = self.hex_to_rgba(word)
             rgba_css = 'rgba(%s,%s,%s,%s)' % rgba
             return rgba_css
-
         return False
