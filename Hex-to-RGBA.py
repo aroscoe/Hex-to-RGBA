@@ -20,7 +20,7 @@ class HexToRgbaCommand(sublime_plugin.TextCommand):
     def hex_to_rgba(self, value):
         value = value.lstrip('#')
         if len(value) == 3:
-            value = value*2
+            value = ''.join([v*2 for v in list(value)])
         return tuple(int(value[i:i+2], 16) for i in range(0, 6, 2))+(1,)
 
     def convert_to_rgba_css(self, word_region):
