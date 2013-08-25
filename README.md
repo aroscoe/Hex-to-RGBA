@@ -1,12 +1,12 @@
 Hex-to-RGBA
 ===========
 
-Sublime Text 2 package for converting CSS hexadecimal colors into RGBA.
+Sublime Text 2/3 package for converting CSS hexadecimal colors into RGBA.
 
 Installation
 ============
 
-Install using [Package Control][1] or download/clone into your Sublime Text 2 package directory.
+Install using [Package Control][1] or download/clone into your Sublime Text 2/3 package directory.
 
 Use
 ===
